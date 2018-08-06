@@ -1,0 +1,64 @@
+#main-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+}
+
+.users {
+    margin: 20px;
+    height: 650px;
+    width: 400px;
+    border-radius: 15%;
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+img {
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 30%;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+}
+
+h1 {
+    font-family: 'Monofett', cursive;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 100px;
+}
+
+h2 {
+    font-family: 'Lobster', cursive;
+    text-transform: capitalize;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    font-size: 36px;
+}
+
+p {
+    font-family: 'Pacifico', cursive;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    font-size: 20px;
+}
+
+#filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttons {
+    border-radius: 3px;
+    padding: 2px;
+}
