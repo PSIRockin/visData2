@@ -61,9 +61,10 @@ function createUser(){
         basicInfo.appendChild(moreButton);
     }
 } */
-
-let userFirstNames = []
-let userLastNames = []
+let users = [];
+let userFirstNames = [];
+let userLastNames = [];
+let userGender = [];
 
 let url = "https://randomuser.me/api/?results=9";
 
@@ -72,6 +73,7 @@ fetch(url)
         return response.json();
      }).then(function (myJson) {
          for(i=0; i<myJson.results.length; i++){
+                                                             
             let user = myJson.results[i];
             let container = document.getElementById("main-container");
             let userContainer = document.createElement("div");
@@ -91,25 +93,60 @@ fetch(url)
             userContainer.appendChild(userImg);
             userContainer.appendChild(userInfo);
 
-
             userFirstNames.push(user.name.first);
             userLastNames.push(user.name.last);
+            users.push(user)
          }
+         userFirstNames.sort();
+         userLastNames.sort();
+
+         console.log(users);
          console.log(userFirstNames);
          console.log(userLastNames);
+
+        for (let j = 0; j<users.length; j++){
+
+            function genderMale(){
+                return users[j].gender == "male";
+            }            
+        }
+         let maleFiltered = myJson.results.filter(genderMale);
+         console.log(maleFiltered);
+         
          let fNameAZ = document.getElementById("nameA-Z");
-        let fNameZA = document.getElementById("nameZ-A");
-        let lNameAZ = document.getElementById("lNameA-Z");
-        let lNameZA = document.getElementById("lNameZ-A");
+         let fNameZA = document.getElementById("nameZ-A");
+         let lNameAZ = document.getElementById("lNameA-Z");
+         let lNameZA = document.getElementById("lNameZ-A");
 
-        fNameAZ.addEventListener("click", sortfAZ());
-        fNameZA.addEventListener("click", sortfZ());    
-    })
+        let button=document.getElementById("nameA-Z")
+        button.addEventListener()
+        let sortedFirts = users.sort(name.first)
+       console.log(sortedFirts)        
+        
+         /*fNameAZ.addEventListener("click", sortfAZ());
+         fNameZA.addEventListener("click", sortfZA());
+         lNameAZ.addEventListener("click", sortlAZ());
+         lNameZA.addEventListener("click", sortlZA());*/
+
+         function genderMale(){
+             return users.gender == "male";
+         }
 
 
-let input = uadd.value;
-if (input.charAt(0) === '3') {
-    gender = "male";
-} else if (input.charAt(0) === '4') {
-    gender = "female";
-}
+});           
+
+
+//userFirstName.sort()
+//This gives us a new, sorted array
+//Then we set the index number of each user in the myJson.results array 
+//to the index of each user in the userFirstName array, changing the order that the users appear in the process
+
+
+
+//Sort alphabetically and ascending:
+var myarray=[]
+myarray.sort() 
+//Sort alphabetically and descending:
+var myarray=[]
+myarray.sort()
+myarray.reverse() 
