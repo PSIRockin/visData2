@@ -62,7 +62,8 @@ function createUser(){
     }
 } */
 
-
+let userFirstNames = []
+let userLastNames = []
 
 let url = "https://randomuser.me/api/?results=9";
 
@@ -72,20 +73,43 @@ fetch(url)
      }).then(function (myJson) {
          for(i=0; i<myJson.results.length; i++){
             let user = myJson.results[i];
-             let container = document.getElementById("main-container");
+            let container = document.getElementById("main-container");
             let userContainer = document.createElement("div");
-            console.log(userContainer);
             let headerTag = document.createElement("h2");
             let userImg = document.createElement("img");
             let userInfo = document.createElement("p");
+
+
             headerTag.innerHTML = user.name.first + " " + user.name.last;
             userContainer.className = "users";
             userImg.src = user.picture.large;
             userInfo.innerHTML = user.gender;
+
+
             container.appendChild(userContainer);
-            console.log(container);
             userContainer.appendChild(headerTag);
             userContainer.appendChild(userImg);
             userContainer.appendChild(userInfo);
+
+
+            userFirstNames.push(user.name.first);
+            userLastNames.push(user.name.last);
          }
+         console.log(userFirstNames);
+         console.log(userLastNames);
+         let fNameAZ = document.getElementById("nameA-Z");
+        let fNameZA = document.getElementById("nameZ-A");
+        let lNameAZ = document.getElementById("lNameA-Z");
+        let lNameZA = document.getElementById("lNameZ-A");
+
+        fNameAZ.addEventListener("click", sortfAZ());
+        fNameZA.addEventListener("click", sortfZ());    
     })
+
+
+let input = uadd.value;
+if (input.charAt(0) === '3') {
+    gender = "male";
+} else if (input.charAt(0) === '4') {
+    gender = "female";
+}
