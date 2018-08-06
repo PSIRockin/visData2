@@ -66,7 +66,7 @@ let userFirstNames = [];
 let userLastNames = [];
 let userGender = [];
 
-let url = "https://randomuser.me/api/?results=9";
+let url = "https://randomuser.me/api/?results=51";
 
 fetch(url)
     .then(function (response) {
@@ -118,10 +118,10 @@ fetch(url)
          let lNameAZ = document.getElementById("lNameA-Z");
          let lNameZA = document.getElementById("lNameZ-A");
 
-        let button=document.getElementById("nameA-Z")
+        /*let button=document.getElementById("nameA-Z")
         button.addEventListener()
         let sortedFirts = users.sort(name.first)
-       console.log(sortedFirts)        
+       console.log(sortedFirts)*/     
         
          /*fNameAZ.addEventListener("click", sortfAZ());
          fNameZA.addEventListener("click", sortfZA());
