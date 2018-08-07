@@ -1,3 +1,12 @@
+#homer {
+    justify-content: center;
+    align-content: center;
+    height: 200px;
+    width: auto;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
 #main-container {
     display: flex;
     flex-flow: row wrap;
@@ -6,7 +15,7 @@
 
 .users {
     margin: 20px;
-    height: 500px;
+    height: 650px;
     width: 400px;
     border-radius: 15%;
     background-color: black;
@@ -61,4 +70,24 @@ p {
 .buttons {
     border-radius: 3px;
     padding: 2px;
+}
+
+@media (max-width: 430px){
+    #homer {
+        justify-content: center;
+        align-content: center;
+        height: 200px;
+        width: auto;
+        margin-left: 40%;
+        margin-right: 00%;
+    }
+    .buttons {
+        border-radius: 15px;
+        padding: 9px;
+    }
+    .button {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; 
+    }
 }
